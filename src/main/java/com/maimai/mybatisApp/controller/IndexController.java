@@ -71,6 +71,7 @@ public class IndexController {
             put("java中HashMap的用法","http://www.cnblogs.com/panxuejun/p/5958875.html");
             put("你的like语句为啥没索引？","https://juejin.im/post/5bbd453ef265da0abc2b84ca");
             put("Spring MVC的RequestContextHolder使用误区","https://www.cnblogs.com/softidea/p/6125087.html");
+            put("springboot利用swagger构建api文档","http://localhost:8081/swagger-ui.html")
         }};
         model.addAttribute("learnList", learnList);
         model.addAttribute("allName", "我的学习地址");
