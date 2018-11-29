@@ -23,7 +23,7 @@
             <ul class="list-group">
                 <li class="list-group-item" th:each="entry:${learnList.entrySet()}">
                     <span th:text="${entry.getKey()}"></span>
-                    <a> <span th:text="${entry.getValue()}"></span></a>
+                    <a th:href="${entry.getValue()}"> <span th:text="${entry.getValue()}"></span></a>
                 </li>
             </ul>
         </div>
