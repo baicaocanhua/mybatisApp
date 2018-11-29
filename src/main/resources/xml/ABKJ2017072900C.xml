@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<article id="" type="journal">
+    <title>基于 Legendre 伪谱法的 3D 刚体摆姿态轨迹跟踪控制</title>
+    <prolog>
+        <authormeta>
+            <authorinformation id="0">
+                <personinfo>
+                    <namedetails>
+                        <fullname>戈新生,朱宁,北京信息科技大学理学院,北京100192</fullname>
+                        <fullname xml:lang="en">GE Xinsheng</fullname>
+                    </namedetails>
+                    <authorintro />
+                    <authorintro xml:lang="en" />
+                </personinfo>
+                <organizationinfo>
+                    <namedetails>
+                        <organizationname />
+                        <organizationname xml:lang="en">College of Science, Beijing Information Science and Technology University</organizationname>
+                    </namedetails>
+                    <addressdetails>
+                        <locality>
+                            <postcode>116033</postcode>
+                            <address />
+                            <address xml:lang="en">Beijing </address>
+                        </locality>
+                    </addressdetails>
+                </organizationinfo>
+            </authorinformation>
+            <authorinformation id="1">
+                <personinfo>
+                    <namedetails>
+                        <fullname>E-mail:gebim@vip.sina.com</fullname>
+                        <fullname xml:lang="en">ZHU Ning</fullname>
+                    </namedetails>
+                </personinfo>
+                <organizationinfo>
+                    <namedetails>
+                        <organizationname />
+                        <organizationname xml:lang="en">College of Science, Beijing Information Science and Technology University</organizationname>
+                    </namedetails>
+                    <addressdetails>
+                        <locality>
+                            <postcode>116033</postcode>
+                            <address />
+                            <address xml:lang="en">Beijing </address>
+                        </locality>
+                    </addressdetails>
+                </organizationinfo>
+            </authorinformation>
+            <authorinformation id="2">
+                <personinfo>
+                    <namedetails>
+                        <fullname />
+                        <fullname xml:lang="en" />
+                    </namedetails>
+                </personinfo>
+                <organizationinfo>
+                    <namedetails>
+                        <organizationname />
+                        <organizationname xml:lang="en"> E-mail: gebim@vip.sina.com</organizationname>
+                    </namedetails>
+                    <addressdetails>
+                        <locality>
+                            <postcode>116033</postcode>
+                            <address />
+                            <address xml:lang="en" />
+                        </locality>
+                    </addressdetails>
+                </organizationinfo>
+            </authorinformation>
+        </authormeta>
+        <metadata>
+            <keywords>
+                <keyword>3D刚体摆</keyword>
+                <keyword>姿态控制</keyword>
+                <keyword>最优控制</keyword>
+                <keyword>伪谱法</keyword>
+            </keywords>
+        </metadata>
+        <category>O316</category>
+        <articletype />
+        <articleid />
+        <doi>10.13209/j.0479-8023.2016.071</doi>
+        <funds />
+        <received />
+        <metadata xml:lang="en">
+            <keywords>
+                <keyword>3D rigid pendulum</keyword>
+                <keyword>attitude control</keyword>
+                <keyword>optimal control</keyword>
+                <keyword>pseudospectral method</keyword>
+            </keywords>
+        </metadata>
+        <funds xml:lang="en" />
+        <received xml:lang="en" />
+    </prolog>
+    <body>
+        <p id="3">	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		3D 刚体摆是一个刚体绕无摩擦的固定支点旋转， 刚体受到恒重力(或万有引力)作用, 并且具有 3个转动自由度[1-2]。该力学模型假设刚体的质心与固定支点不重合， 刚体摆具有悬垂和倒置两个相对平衡位置。若刚体摆为轴对称情形， 并且对称轴为刚体的惯性主轴, 当绕对称轴角速度为零时等价于球面摆, 当绕对称轴角速度为常数时等价于Lag-range陀螺(倒置)， 当对称轴为铅垂而角速度为常数时则等价于睡陀螺。因此， 3D刚体摆是一种广义刚体摆模型。</p>
+        <p id="4">伪谱法采用全局正交多项式对系统的状态空间进行逼近， 从而将最优控制问题转化为非线性规划问题进行求解[3]。近年来, 伪谱法因其良好的计算效率和精度以及对初始参数取值不敏感的优点， 成为近年来求解最优控制问题[4-6]新方法。伪谱法在航天领域多用于轨迹优化问题, 对姿态运动最优控制问题研究鲜有报道。</p>
+        <p id="5">本文基于伪谱法, 研究 3D 刚体摆的姿态运动最优控制问题。针对 3D 刚体摆， 通过高斯伪谱 法, 同时离散化系统状态变量和控制变量, 将最优控制问题转化为非线性规划问题, 得到 3D 刚体摆的姿态最优控制轨迹, 即 3D 刚体摆将按照预先设定好的参考轨迹运行， 此时运动规划问题为开环控制[7]。然而， 3D 刚体摆在工程实践中, 难以避免外界干扰、初始扰动等因素的影响， 开环控制器往往会导致 3D 刚体摆的实际运行轨迹偏离期望的参考轨迹值， 从而导致系统性能的下降, 并使得开环控制优化过程失去意义。Lu[8]通过 Enler-Simpson 方法将二次型调节问题近似， 并结合滚动时域策略， 得到闭环轨迹跟踪控制器。Yan 等[9]基于Legendre伪谱法， 将两点边值问题得到的线性时变方程离散化求解。庄宇飞等[10-11]采用实时重规划策略， 实现稳定控制器状态的反馈， 从而完成欠驱动刚性航天器对参考轨迹的闭环跟踪。</p>
+        <p id="6">本文在开环控制的基础上, 设计闭环轨迹跟踪控制器。开环优化的实时性是保证重规划算法正常运行的必要条件, Bellman 最优性原理则是重规划算法的核心思想。如图 1 所示, Bellman 最优性原理可以简单地描述为： 如果从P1点到P2点的轨迹是最优的， 且P3点为该最优轨迹上不同于P1, P2的任意一点, 则从P2点到P3点的轨迹仍是最优的。	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		</p>
+        <p id="7">根据 Bellman 最优性原理, 在理想状况下， 每次重规划所得的最优轨迹均与原参考轨迹重合。这表明了重规划算法的合理性, 即重规划算法可以保证每次规划的解仍是原问题的最优解， 或者说重复规划的过程并不影响解的最优性。</p>
+        <p id="8">本文主要研究3D刚体摆在有初始扰动情况下的轨迹姿态控制问题， 并以开环伪谱法最优控制为基础， 采用内外环控制结构的算法, 设计带有状态反馈的闭环最优姿态轨迹跟踪控制器。将系统的运动方程相对于参考轨迹线性化, 且以3D刚体摆实际运行轨迹与参考轨迹之间的偏差为控制量， 将姿态跟踪问题转化为线性时变系统的姿态调节问题。结合Legendre伪谱法， 针对时变的线性化系统设计最优调节控制器， 从而实现 3D 刚体摆的状态闭环的轨迹跟踪控制控制。</p>
+        <section id="9">
+            <title>1 3D刚体摆的数学模型</title>
+            <p id="10">如图2所示, 3D刚体摆绕一固定且无摩擦的支撑点                <image type="image" href="images/abkj2017072900c031.jpg" display="inline" placement="break" />进行三自由度旋转。在惯性坐标系                <image type="image" href="images/abkj2017072900c042.jpg" display="inline" placement="break" />下，                 <image type="image" href="images/abkj2017072900c053.jpg" display="inline" placement="break" />为原点, 其中                <image type="image" href="images/abkj2017072900c064.jpg" display="inline" placement="break" />轴方向与重力加速度方向相同，                 <image type="image" href="images/abkj2017072900c075.jpg" display="inline" placement="break" />与                <image type="image" href="images/abkj2017072900c086.jpg" display="inline" placement="break" />轴位于水平面内并与                <image type="image" href="images/abkj2017072900c097.jpg" display="inline" placement="break" />轴呈右手系; 构造                <image type="image" href="images/abkj2017072900c004.jpg" display="inline" placement="break" />连体坐标系,                 <image type="image" href="images/abkj2017072900c012.jpg" display="inline" placement="break" />轴方向由原点                <image type="image" href="images/abkj2017072900c013.jpg" display="inline" placement="break" />指向摆的质心 M，                 <image type="image" href="images/abkj2017072900c014.jpg" display="inline" placement="break" />轴和                <image type="image" href="images/abkj2017072900c015.jpg" display="inline" placement="break" />轴分别沿着摆的惯性主轴方向	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		。</p>
+            <p id="35">在惯性坐标系                <image type="image" href="images/abkj2017072900c016.jpg" display="inline" placement="break" />下, 采用3-2-1欧拉姿态角描述方式， 并考虑重力矩的作用, 3D刚体摆的数学模型[12]为                <image type="image" href="images/abkj2017072900c017.jpg" display="inline" placement="break" />，(1)                <image type="image" href="images/abkj2017072900c018.jpg" display="inline" placement="break" />,(2)</p>
+            <p id="42">其中,                 <image type="image" href="images/abkj2017072900c019.jpg" display="inline" placement="break" />为 3D 刚体摆的惯量矩阵，                 <image type="image" href="images/abkj2017072900c020.jpg" display="inline" placement="break" />为3D刚体摆的质量， g是重力加速度，                 <image type="image" href="images/abkj2017072900c021.jpg" display="inline" placement="break" />表示为从原点                <image type="image" href="images/abkj2017072900c022.jpg" display="inline" placement="break" />到质心 C 的矢量，                 <image type="image" href="images/abkj2017072900c023.jpg" display="inline" placement="break" />为惯性坐标系                <image type="image" href="images/abkj2017072900c024.jpg" display="inline" placement="break" />中                <image type="image" href="images/abkj2017072900c025.jpg" display="inline" placement="break" />轴方向上的单位向量                <image type="image" href="images/abkj2017072900c026.jpg" display="inline" placement="break" />，                 <image type="image" href="images/abkj2017072900c027.jpg" display="inline" placement="break" />是 3D 刚体摆的角速度,                 <image type="image" href="images/abkj2017072900c028.jpg" display="inline" placement="break" />是控制输入量, R表示为旋转矩阵。对于矢量                <image type="image" href="images/abkj2017072900c029.jpg" display="inline" placement="break" />和                <image type="image" href="images/abkj2017072900c030.jpg" display="inline" placement="break" />，                 <image type="image" href="images/abkj2017072900c032.jpg" display="inline" placement="break" />可表示为                <image type="image" href="images/abkj2017072900c033.jpg" display="inline" placement="break" />,(3)</p>
+            <p id="71">	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		其中斜对称矩阵                <image type="image" href="images/abkj2017072900c034.jpg" display="inline" placement="break" />定义为                <image type="image" href="images/abkj2017072900c035.jpg" display="inline" placement="break" />。</p>
+            <p id="76">令G =RTe3， 则 3D 刚体摆可描述为约化姿态的形式：                <image type="image" href="images/abkj2017072900c036.jpg" display="inline" placement="break" />,(4)                <image type="image" href="images/abkj2017072900c037.jpg" display="inline" placement="break" />。(5)</p>
+            <p id="81">3D 刚体摆在空间坐标系内存在两个平衡位置， 即悬垂平衡点和倒立平衡点[12-13]， 意味着 3D 刚体摆的最优控制问题为从任意初始位置运动到目标平衡位置的姿态运动控制的过程。</p>
+        </section>
+        <section id="82">
+            <title>2 Legendre闭环伪谱法求解</title>
+            <p id="83">在理想无干扰的环境中, 3D刚体摆可以根据控制目标, 利用Legendre伪谱法规得到的 3D 刚体摆的最优运动轨迹[7]。然后， 考虑 3D 刚体摆姿态控制过程中存在初始扰动的情况, 应用伪谱法并结合重规划策略, 设计状态闭环的轨迹跟踪控制器。将3D 刚体摆姿态运动模型(式(1)和(2))在参考轨迹上线性化， 则有                <image type="image" href="images/abkj2017072900c038.jpg" display="inline" placement="break" />,(6)	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		</p>
+            <p id="86">其中，                 <image type="image" href="images/abkj2017072900c039.jpg" display="inline" placement="break" />为状态变量实际值                <image type="image" href="images/abkj2017072900c040.jpg" display="inline" placement="break" />与参考值                <image type="image" href="images/abkj2017072900c041.jpg" display="inline" placement="break" />之间的偏差,                <image type="image" href="images/abkj2017072900c043.jpg" display="inline" placement="break" />是控制输入变量的修正量，                <image type="image" href="images/abkj2017072900c045.jpg" display="inline" placement="break" />是 系统的状态矩阵，                 <image type="image" href="images/abkj2017072900c046.jpg" display="inline" placement="break" />是系统的控制输入矩 阵。矩阵                <image type="image" href="images/abkj2017072900c047.jpg" display="inline" placement="break" />，                <image type="image" href="images/abkj2017072900c048.jpg" display="inline" placement="break" />的表达式分别为                <image type="image" href="images/abkj2017072900c049.jpg" display="inline" placement="break" />，                 <image type="image" href="images/abkj2017072900c050.jpg" display="inline" placement="break" />,</p>
+            <p id="108">其中，                <image type="image" href="images/abkj2017072900c051.jpg" display="inline" placement="break" />，                <image type="image" href="images/abkj2017072900c052.jpg" display="inline" placement="break" />,                 <image type="image" href="images/abkj2017072900c057.jpg" display="inline" placement="break" />。</p>
+            <p id="118">根据线性化方程(6), 利用伪谱法设计姿态稳定控制器的目标, 就是通过确定输入修正量</p>
+            <figure id="119">
+                <title />
+                <title xml:lang="en" />
+                <image type="image" href="inline_images/abkj2017072900c058.jpg" display="" placement="break" />
+            </figure>
+            <p id="120">以及状态偏差量</p>
+            <figure id="121">
+                <title />
+                <title xml:lang="en" />
+                <image type="image" href="inline_images/abkj2017072900c059.jpg" display="" placement="break" />
+            </figure>
+            <p id="122">， 使得最优泛函                <image type="image" href="images/abkj2017072900c061.jpg" display="inline" placement="break" />(7)</p>
+            <p id="126">最小。式(7)中， S是半正定的末端加权矩阵, Q是半正定的状态加权阵， R 是正定的控制加权阵， 则相应的Hamilton函数为                <image type="image" href="images/abkj2017072900c063	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		.jpg" display="inline" placement="break" />，(8)</p>
+            <p id="130">式中， </p>
+            <figure id="131">
+                <title />
+                <title xml:lang="en" />
+                <image type="image" href="inline_images/abkj2017072900c065.jpg" display="" placement="break" />
+            </figure>
+            <p id="132">为协态向量。由变分法可以得到对应的伴随方程和横截条件为                <image type="image" href="images/abkj2017072900c066.jpg" display="inline" placement="break" />(9)</p>
+            <p id="135">	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		又由                <image type="image" href="images/abkj2017072900c067.jpg" display="inline" placement="break" />为最优控制的必要条件                <image type="image" href="images/abkj2017072900c068.jpg" display="inline" placement="break" />， 有                <image type="image" href="images/abkj2017072900c069.jpg" display="inline" placement="break" />。(10)</p>
+            <p id="142">于是, 根据最优性必要条件， 有                <image type="image" href="images/abkj2017072900c070.jpg" display="inline" placement="break" />,(11)</p>
+            <p id="145">与之对应的边值条件为                <image type="image" href="images/abkj2017072900c071.jpg" display="inline" placement="break" />(12)</p>
+            <p id="148">由上述分析可知, 采用闭环控制算法设计姿态调节器时, 需要开环的最优控制两点边值问题能够时刻求解。由于 3D 刚体摆模型具有强非线性特性, 导致求解 Riccati 方程过程复杂， 运算量大。因此， 本节采用 Legendre 伪谱法将两点边值问题离散化， 将其求解微分方程组问题简化为求解一组线性代数方程。	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		</p>
+            <p id="149">首先进行线性变换， 用                <image type="image" href="images/abkj2017072900c072.jpg" display="inline" placement="break" />将时间区间                <image type="image" href="images/abkj2017072900c073.jpg" display="inline" placement="break" />映射到区间                <image type="image" href="images/abkj2017072900c074.jpg" display="inline" placement="break" />上, 两点边值问题就变为                <image type="image" href="images/abkj2017072900c076.jpg" display="inline" placement="break" />。(13)</p>
+            <p id="158">在LGL (Legendre-Gauss-Lobatto)zh(h=0, 1, 2, …, N)点上将状态变量                <image type="image" href="images/abkj2017072900c077.jpg" display="inline" placement="break" />及协态向量 l 离散化， 则有                <image type="image" href="images/abkj2017072900c078.jpg" display="inline" placement="break" />(14)                <image type="image" href="images/abkj2017072900c079.jpg" display="inline" placement="break" />为                <image type="image" href="images/abkj2017072900c080.jpg" display="inline" placement="break" />阶拉格朗日插值基函数。根据Legendre伪谱法的求导公式                <image type="image" href="images/abkj2017072900c081.jpg" display="inline" placement="break" />,                 <image type="image" href="images/abkj2017072900c082.jpg" display="inline" placement="break" />在LGL点                <image type="image" href="images/abkj2017072900c083.jpg" display="inline" placement="break" />处的导数为                <image type="image" href="images/abkj2017072900c084.jpg" display="inline" placement="break" />(15)</p>
+            <p id="175">其中， D = (Dkh)为(N+1)×(N+1)阶导数矩阵:</p>
+            <figure id="176">
+                <title />
+                <title xml:lang="en" />
+                <image type="image" href="images/abkj2017072900c085.jpg" display="" placement="break" />
+            </figure>
+            <p id="177">两点边值问题在LGL点上离散化, 有                <image type="image" href="images/abkj2017072900c087.jpg" display="inline" placement="break" />(16)</p>
+            <p id="180">为减小冗余, 用边界条件                <image type="image" href="images/abkj2017072900c088.jpg" display="inline" placement="break" />代替方程组中前 n 个方程，                 <image type="image" href="images/abkj2017072900c089.jpg" display="inline" placement="break" />代替后 n 个方程, 并令                <image type="image" href="images/abkj2017072900c090.jpg" display="inline" placement="break" />， 将上述方程组写为紧凑的矩阵形式[10]， 得到</p>
+            <p id="187">CF = D,(17)</p>
+            <p id="188">式中，                <image type="image" href="images/abkj2017072900c091.jpg" display="inline" placement="break" />，                <image type="image" href="images/abkj2017072900c092.jpg" display="inline" placement="break" />，</p>
+            <figure id="195">
+                <title />
+                <title xml:lang="en" />
+                <image type="image" href="images/abkj2017072900c095.jpg" display="" placement="break" />
+            </figure>
+            <p id="196">式中, I是n×n的单位矩阵， 0是                <image type="image" href="images/abkj2017072900c096.jpg" display="inline" placement="break" />的零矩阵， DX0 =Dx0I。</p>
+            <p id="199">通过求解线性方程组, 可以得到两点边值问题的解析解, 且无需对方程进行积分运算。因此， 算法的精度得到很好的保证， 并减少了运算时间， 大幅降低求解过程的计算量	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		。</p>
+            <p id="200">计算过程如下。</p>
+            <p id="201">第 1 步, 选取算法采样周期。</p>
+            <p id="202">	 		  			 	  	    		 		 					   		   	 			  			 	 	 	 	 	  					  	 		 		  	  	 	 				 		   		 					 	    				     	 	   	 		 		第 2 步， 在参考轨迹上将 3D 刚体摆的运动模型线性化并确定初值                <image type="image" href="images/abkj2017072900c098.jpg" display="inline" placement="break" />。</p>
+            <p id="205">第 3 步, 对区间                <image type="image" href="images/abkj2017072900c099.jpg" display="inline" placement="break" />到                <image type="image" href="images/abkj2017072900c100.jpg" display="inline" placement="break" />进行映射, 依据计算时间和精度要求选取适当的插值点， 采用Legendre伪谱法求解。</p>
+            <p id="210">第 4 步, 将代数方程组(17)的解代入方程(10), 求得最优控制修正量                <image type="image" href="images/abkj2017072900c101.jpg" display="inline" placement="break" />。</p>
+            <p id="213">第5步, 将实际控制输入方程u = u*+Du*代 入动力学方程(4), 求得 3D 刚体摆的实际运行轨 迹                <image type="image" href="images/abkj2017072900c102.jpg" display="inline" placement="break" />。</p>
+            <p id="216">第6步， 令Dx*=x-Dx*， 在下一时刻, 重复步骤3~5， 直到                <image type="image" href="images/abkj2017072900c103.jpg" display="inline" placement="break" />为止。</p>
+        </section>
+        <section id="219">
+            <title>3 仿真实验及分析</title>
+            <p id="220">设 3D 刚体摆的质量为</p>
+            <p id="221">m=140 kg，</p>
+            <p id="222">转动惯量为J = diag(40, 45， 50) kg·m2， 支点与质心之间的距离为</p>
+            <p id="223">l=0.1 m。</p>
+            <p id="224">假设3D刚体摆在 t =0 时刻的干扰误差为</p>
+            <p id="225">|Dwx(0)|≤0.1 rad/s， </p>
+            <p id="226">|DGx(0)|≤0.1， </p>
+            <p id="227">|Dwy(0)|≤0.1 rad/s， </p>
+            <p id="228">|DGy(0)|≤0.1, </p>
+            <p id="229">|Dwz(0)|≤0.1 rad/s, </p>
+            <p id="230">|DGz(0)|≤0.1。</p>
+            <p id="231">设 3D 刚体摆的初始位置角速度为 </p>
+            <p id="232">w0=(0, 0， 0)T rad/s， </p>
+            <p id="233">约化姿态为</p>
+            <p id="234">G0=(0.42, -0.29, -0.86)T, </p>
+            <p id="235">设目标位置为悬垂平衡位置， 其角速度为 </p>
+            <p id="236">wf=(0, 0， 0)T rad/s， </p>
+            <p id="237">约化姿态为</p>
+            <p id="238">Gf = (0， 0, 1)T, </p>
+            <p id="239">插值点 N=35， 仿真结果如图3所示。</p>
+            <figure id="240">
+                <title>图3 3D刚体摆角速度变化曲线</title>
+                <title xml:lang="en">Fig. 3 Evolution of the angular velocity of the 3D pendulum</title>
+                <image type="image" href="images/abkj2017072900c104.jpg" display="" placement="break" />
+            </figure>
+            <p id="241">图 3 显示 3D 刚体摆的角速度沿三轴的变化曲线， 可以看出， 在存在初始扰动的情况下, 开环控制的角速度受到初始扰动逐渐偏离最优参考轨迹运动， 失去控制效果, 而闭环反馈控制能够有效抵抗初始扰动的干扰， 迅速调整 3D 刚体摆的角速度变化, 沿最优轨迹使 3D 刚体摆到达目标悬垂平衡位置， 且角速度趋近于0。</p>
+            <p id="242">图 4 显示 3D 刚体摆约化姿态变化曲线, 可以看出， 刚体摆受到初始扰动的影响, 开环控制不能有效地对 3D 刚体摆进行姿态调整， 逐渐偏离参考轨迹。利用提出的反馈控制方法, 3D 刚体摆在受到初始扰动偏离最优路径轨迹, 能够迅速响应做出调整， 返回到最优运动轨迹， 且沿此路径最后到达悬垂平衡位置。</p>
+            <p id="243">图5所示的控制输入在[-1， 1]间切换， 根据最优控制问题的必要条件， 即得到的控制力矩是原姿态运动最优控制问题的最优解。图6为3D刚体摆在最优控制输入下的空间姿态轨迹变化曲线。</p>
+            <p id="244">同样, 在满足相同初始扰动存在的情况下, 倒立平衡的初始角速度为                <image type="image" href="images/abkj2017072900c005.jpg" display="inline" placement="break" />， 约化姿态为                <image type="image" href="images/abkj2017072900c006.jpg" display="inline" placement="break" />; 目标倒立平衡点角速度为                <image type="image" href="images/abkj2017072900c007.jpg" display="inline" placement="break" />, 约化姿态为                <image type="image" href="images/abkj2017072900c008.jpg" display="inline" placement="break" />。3D刚体摆在闭环反馈最优控制作用下， 倒立平衡仿真结果如图7~10所示。</p>
+            <p id="254">图7所示的倒立情况下， 开环控制的角速度受</p>
+            <figure id="255">
+                <title>图7 3D刚体摆角速度变化曲线</title>
+                <title xml:lang="en">Fig. 7 Evolution of the angular velocity of the 3D pendulum</title>
+                <image type="image" href="images/abkj2017072900c010.jpg" display="" placement="break" />
+            </figure>
+            <p id="256">到初始扰动, 逐渐偏离最优参考轨迹， 失去控制效果， 而闭环控制能够有效地抵抗初始扰动的干扰。在初段被干扰时, 该控制策略通过反馈作用能够迅速调整3D刚体摆的角速度变化, 沿最优轨迹使3D刚体摆到达目标倒立平衡点， 且角速度趋近于 0。</p>
+            <p id="257">图 8 为倒立情况下 3D 刚体摆的约化姿态变化曲线, 说明在存在初始扰动的情况下, 闭环控制能够有效地抵抗初始扰动的干扰， 迅速调整 3D 刚体摆的空间姿态, 使 3D 刚体摆沿最有参考轨迹运动到目标倒立平衡点。相反， 开环最优控制则不能消除初始扰动的影响, 逐渐偏离最优轨迹， 无法运动</p>
+            <figure id="258">
+                <title>图8 3D刚体摆约化姿态变化曲线</title>
+                <title xml:lang="en">Fig. 8 Evolution of the reduced attitude of the 3D pendulum</title>
+                <image type="image" href="images/abkj2017072900c011.jpg" display="" placement="break" />
+            </figure>
+            <p id="259">到目标倒立平衡点。</p>
+            <p id="260">图9所示的最优控制输入力矩曲线在上下限间切换变化。图 10 形象地反映了系统姿态在空间坐标内的运动轨迹。</p>
+        </section>
+        <section id="261">
+            <title>4 结论</title>
+            <p id="262">本文针对 3D 刚体摆运动姿态稳定控制问题， 设计了 Legendre 伪谱法闭环控制器。仿真结果表明， 基于Legendre伪谱法闭环控制算法能够有效地抑制初始扰动给 3D 刚体摆运动过程带来的不利影响， 按照约束条件的要求达到目标平衡位置, 进一步证明了伪谱法求解 3D 刚体摆最优控制问题的可行性和有效性， 也为求解类似复杂约束系统的最优控制问题提供了新的途径。</p>
+        </section>
+    </body>
+    <bibliography>
+        <biblioitem id="263">
+            <title>〖1〗[1]Shen J, Sanyal A K, Chaturvedi N A, et al. Dynamics and control of a 3D pendulum // Proceedings of the 43rd IEEE Conference on Decision and Control. Bahamas, 2004: 323?偉d328</title>
+        </biblioitem>
+        <biblioitem id="264">
+            <title>〖2〗[2]</title>
+        </biblioitem>
+        <biblioitem id="265">
+            <title>Chaturvedi N A, Lee T, Leok M, et al. Nonlinear dynamics of the 3D pendulum. SIAM Journal on Applied Dynamical Systems, 2007, 7(2): 144?偉d160</title>
+        </biblioitem>
+        <biblioitem id="266">
+            <title>〖3〗[3]Gong Q, Ross I M, Kang W, et al. Connections between the convector mapping theorem and conver-gence of pseudospectral methods for optimal control. Computational Optimization and Applications, 2008, 41: 307?偉d335</title>
+        </biblioitem>
+        <biblioitem id="267">
+            <title>〖4〗[4]雍恩米, 陈磊, 唐国金.飞行器轨迹优化数值方法综述. 宇航学报, 2008, 29(2): 397?偉d406</title>
+        </biblioitem>
+        <biblioitem id="268">
+            <title>〖5〗[5]Fahroo F, Ross I M. Direct trajectory optimization by a Chebyshev pseudospectral method. Journal of Gui-dance, Control, and Dynamics, 2002, 25(1): 160–166</title>
+        </biblioitem>
+        <biblioitem id="269">
+            <title>〖6〗[6]Shamsi M, Dehghan M. Determination of a control function in three-dimensional parabolic equations by Legendre pseudospectral method. Numeral Methods Partial Differential Equation, 2012, 28: 74–93</title>
+        </biblioitem>
+        <biblioitem id="270">
+            <title>〖7〗[7]朱宁, 戈新生. 勒让德伪谱法求解三维刚体摆姿态运动最优控制问题. 力学与实践, 2015(4): 481?偉d487</title>
+        </biblioitem>
+        <biblioitem id="271">
+            <title>〖8〗[8]Lu P. Regulation about time-varying trajectories: precision entry guidance illustrated. Journal of Gui-dance, Control, and Dynamics, 1999, 22(6): 784?偉d790</title>
+        </biblioitem>
+        <biblioitem id="272">
+            <title>〖9〗[9]Yan H, Fahroo F, Ross I M. Optimal feedback control laws by legendre pseudospectral approximations // Proceedings of the American Control Conference. Piscataway, 2001: 2388?偉d2393</title>
+        </biblioitem>
+        <biblioitem id="273">
+            <title>〖10〗[10]庄宇飞, 黄海滨. 欠驱动航天器实时最优控制算法设计. 系统工程与电子技术, 2013, 35(7): 1477?偉d 1485</title>
+        </biblioitem>
+        <biblioitem id="274">
+            <title>〖11〗[11]庄宇飞, 马广富, 黄海滨. 欠驱动刚性航天器时间最优轨迹规划设计. 控制与决策, 2010, 25(10): 1469?偉d1473</title>
+        </biblioitem>
+        <biblioitem id="275">
+            <title>〖12〗[12]Chaturvedi N A, McClamroch N H. Asymptotic stabilization of the hanging equilibrium manifold of the 3D pendulum. International Journal of Robust and Nonlinear Control, 2007, 17: 1435–1454</title>
+        </biblioitem>
+    </bibliography>
+    <title xml:lang="en">The Trajectory Tracking Control of 3D Rigid Body Pendulum Attitude Based on Legendre Pseudospectral Method</title>
+    <abstract>研究3D刚体摆在有初始扰动情况下的姿态运动最优控制问题。结合 3D 刚体摆转动的姿态与角速度特点, 针对外部扰动设计闭环反馈姿态跟踪控制器。首先, 利用Legendre伪谱法规划出3D刚体摆开环的姿态运动轨迹。然后, 将系统的运动方程线性化, 并以 3D 刚体摆的实际运动姿态轨迹与参考运动姿态轨迹之间的差值作为控制量, 将姿态跟踪问题转换为线性时变系统的姿态调节问题。最后, 对基于 Legendre 伪谱法的3D刚体摆姿态最优控制的闭环控制方法进行仿真分析, 验证在具有初始扰动情况下算法的有效性。</abstract>
+    <abstract xml:lang="en">The optimal control of the attitude motion of 3D rigid pendulum with initial disturbance is investigated. Combined with the characteristics of the attitude and angular velocity of the 3D rigid pendulum, the closed-loop feedback attitude tracking controller is designed for the external disturbance. Firstly, 3D rigid pendulum attitude trajectory is designed for open loop by use of Legendre pseudospectra method. Then the system’s motion equation is linearized, and the difference between the attitude reference trajectory and actual trajectory motion in 3D rigid pendulum is considered as control variable. Attitude tracking problem is converted to linear time-varying systems attitude regulation problem. Finally, the closed-loop control based on the Legendre pseudospectral method is simulated and analyzed for the optimal control of 3D rigid pendulum, and simulations show that the effectiveness in the case of initial disturbance.</abstract>
+</article>

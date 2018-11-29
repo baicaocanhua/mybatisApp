@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maimai.mybatisApp.dao.GradeMapper">
+
+    <resultMap type="Grade" id="resultListUser">
+        <id column="id" property="id" />
+        <result column="grade_nm" property="gradeNm" javaType="int" />
+        <result column="teacher_id" property="teacherId" />
+
+    </resultMap>
+
+    <select id="getByGradeNm" resultType="Grade" parameterType="String" resultMap="resultListUser">
+        select * from grade where grade_nm=#{name}
+    </select>
+
+    <insert id="save" parameterType="grade">
+        INSERT INTO user(username,password,address) VALUES (#{username},#{password},#{address})
+    </insert>
+
+
+
+</mapper>
+
