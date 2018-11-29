@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -26,6 +27,7 @@ public class MybatisAppApplication extends SpringBootServletInitializer implemen
     DataSource dataSource;
 
     public static void main(String[] args) {
+        System.setProperty("name","System.setProperty");
         SpringApplication.run(MybatisAppApplication.class, args);
     }
 
@@ -33,6 +35,15 @@ public class MybatisAppApplication extends SpringBootServletInitializer implemen
     public void run(String... arg0) throws Exception {
         System.out.println("DATASOURCE = " + dataSource);
     }
+
+
+    @Bean
+    public CommandLineRunner commandLineRunner() {
+        return (args) -> {
+            System.setProperty("name", "javastack-system-properties");
+        };
+    }
+
 
 
 }
