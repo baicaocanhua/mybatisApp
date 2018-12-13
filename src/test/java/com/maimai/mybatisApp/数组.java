@@ -1,7 +1,10 @@
 package com.maimai.mybatisApp;
 
+import com.maimai.mybatisApp.annotation.Mai;
+import com.maimai.mybatisApp.service.AopService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -11,8 +14,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class 数组 {
+
+    @Autowired
+    AopService aopService;
     @Test
     public void a() {
+       aopService.aop();
         System.out.println();
         int num[][] = new int[10][10];
         int count = 0;
@@ -24,4 +31,6 @@ public class 数组 {
             System.out.println();
         }
     }
+
+
 }
